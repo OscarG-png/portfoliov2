@@ -1,5 +1,7 @@
 import "~/styles/globals.css";
 import { ThemeProvider } from "~/components/theme-provider";
+import NavMenu from "~/components/NavMenu";
+import { ModeToggle } from "~/components/DarkMode-Toggle";
 
 import { GeistSans } from "geist/font/sans";
 
@@ -23,7 +25,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="mx-5 my-5 flex flex-row justify-between gap-2">
+            <NavMenu />
+            <ModeToggle />
+          </div>
+          <div className="container">{children}</div>
         </ThemeProvider>
       </body>
     </html>
